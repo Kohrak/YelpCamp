@@ -6,9 +6,15 @@
     <h1>Create a new campground</h1>
 
     <form action="/campgrounds" method="POST">
-      <input class="form-control" type="text" name="name" placeholder="name">
-      <input class="form-control" type="text" name="image" placeholder="image">
-      <input class="form-control" type="text" name="description" placeholder="description">
+      <div class="form-group">
+        <input class="form-control" type="text" name="name" placeholder="name">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="image" placeholder="image">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="description" placeholder="description">
+      </div>
       <button class="btn btn-primary">submit</button>
     </form>
 
