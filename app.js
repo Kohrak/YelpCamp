@@ -5,11 +5,12 @@ var express = require("express"),
     Campground = require("./models/campground"),
     Comment = require("./models/comment"),
     seedDB = require("./seeds");
-    
+
 seedDB();
 mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
 
 //Routes
 
@@ -99,13 +100,13 @@ app.post("/campgrounds/:id/comments", function(req, res){
 
 //Cloud9
 
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("Yelp!");
-})
+// app.listen(process.env.PORT, process.env.IP, function(){
+//     console.log("Yelp!");
+// })
 
 
 //Local
 
-// app.listen(3000, function(){
-//     console.log("Yelp!");
-// })
+app.listen(3000, function(){
+    console.log("Yelp!");
+})
