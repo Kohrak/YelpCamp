@@ -3,22 +3,30 @@
 <div class="container">
 
   <div class="row">
-    <h1>Create a new campground</h1>
+    <h1 class="text-center">Create a new campground</h1>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <form action="/campgrounds" method="POST">
+          <div class="form-group">
+            <input class="form-control" type="text" name="name" placeholder="name">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" name="image" placeholder="image">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" name="description" placeholder="description">
+          </div>
+          <button class="btn btn-primary">submit</button>
+        </form>
+        <p>
+          <a class="btn btn-danger" href="/campgrounds">Go back</a>
+        </p>
+         
+      </div>
+    </div>
+    
 
-    <form action="/campgrounds" method="POST">
-      <div class="form-group">
-        <input class="form-control" type="text" name="name" placeholder="name">
-      </div>
-      <div class="form-group">
-        <input class="form-control" type="text" name="image" placeholder="image">
-      </div>
-      <div class="form-group">
-        <input class="form-control" type="text" name="description" placeholder="description">
-      </div>
-      <button class="btn btn-primary">submit</button>
-    </form>
-
-    <a href="/campgrounds">Go back</a>
+   
   </div>
 </div>
 <% include ../partials/footer.ejs %>
