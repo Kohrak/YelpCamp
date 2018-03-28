@@ -5,3 +5,8 @@
 #delete-form {
   display: inline;
 }
+
+#camp-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
