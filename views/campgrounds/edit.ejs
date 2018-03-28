@@ -19,9 +19,11 @@
           <button class="btn btn-primary">submit</button>
         </form>
         <p>
-          <a class="btn btn-danger" href="/campgrounds">Go back</a>
+          <a href="/campgrounds">Go back</a>
         </p>
-
+          <form action="/campgrounds/<%= campground._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+          </form>
       </div>
     </div>
 
