@@ -22,8 +22,6 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
-//seedDB();
-
 
 //Passport config
 app.use(require("express-session")({
@@ -47,15 +45,6 @@ app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-//Cloud9
-
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Yelp!");
 })
-
-
-//Local
-
-// app.listen(3000, function(){
-//     console.log("Yelp!");
-// })
