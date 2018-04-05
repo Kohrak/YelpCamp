@@ -8,7 +8,7 @@ var User = require("../models/user");
 //Landing Page
 
 router.get("/", function(req, res){
-    res.render("landing");
+    res.redirect("/campgrounds");
 })
 
 //Auth routes
@@ -21,12 +21,14 @@ router.post("/register", function(req, res){
   var newUser = new User({username: req.body.username});
   User.register(newUser, req.body.password, function(err, user){
     if (err){
-      console.log(err);
-      return res.render("register");
+      req.flash("error", err.message);
+      res.render("register");
+    } else {
+      passport.authenticate("local")(req, res, function(){
+        req.flash("success", "Welcome to YelpCamp " + user.username);
+        res.redirect("/campgrounds");
+      });
     }
-    passport.authenticate("local")(req, res, function(){
-      res.redirect("/campgrounds");
-    });
   })
 })
 
@@ -49,12 +51,5 @@ router.get("/logout", function(req, res){
   req.flash("success", "logged you out!");
   res.redirect("/campgrounds");
 })
-
-// function isLoggedIn(req, res, next){
-//   if(req.isAuthenticated()){
-//     return next();
-//   }
-//   res.redirect("/login");
-// }
 
 module.exports = router;
