@@ -45,15 +45,16 @@ app.use(function(req, res, next){
 app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
+
 //Cloud9
 
-// app.listen(process.env.PORT, process.env.IP, function(){
-//     console.log("Yelp!");
-// })
+app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("Yelp!");
+})
 
 
 //Local
 
-app.listen(3000, function(){
-    console.log("Yelp!");
-})
+// app.listen(3000, function(){
+//     console.log("Yelp!");
+// })
